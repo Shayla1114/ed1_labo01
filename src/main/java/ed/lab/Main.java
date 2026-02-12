@@ -3,36 +3,30 @@ package ed.lab;
 import java.util.Random;
 
 public class Main {
-    private static final ArrayGenerator<Integer> sortedArrayGenerator = length -> {
+    private static final ArrayGenerator<Integer> sortedArrayGenerator = (length) -> {
         Integer[] array = new Integer[length];
-
         for (int i = 0; i < length; i++) {
             array[i] = i;
         }
-
         return array;
-    }; // Reemplácelo por una función lambda
+    };
 
-    private static final ArrayGenerator<Integer> invertedArrayGenerator = length -> {
+    private static final ArrayGenerator<Integer> invertedArrayGenerator = (length) -> {
         Integer[] array = new Integer[length];
-
         for (int i = 0; i < length; i++) {
             array[i] = length - i;
         }
-
         return array;
-    }; // Reemplácelo por una función lambda
+    };
 
-    private static final ArrayGenerator<Integer> randomArrayGenerator = length -> {
+    private static final ArrayGenerator<Integer> randomArrayGenerator = (length) -> {
         Random random = new Random();
         Integer[] array = new Integer[length];
-
         for (int i = 0; i < length; i++) {
             array[i] = random.nextInt(length);
         }
-
         return array;
-    }; // Reemplácelo por una función lambda
+    };
 
     private static final QuickSort<Integer> highPivotQuickSort = null; // Reemplácelo por una referencia a un método
 
