@@ -1,5 +1,5 @@
 package ed.lab;
-
+import ed.lab.SortingAlgorithms;
 import java.util.Random;
 
 public class Main {
@@ -28,11 +28,11 @@ public class Main {
         return array;
     };
 
-    private static final QuickSort<Integer> highPivotQuickSort = null; // Reemplácelo por una referencia a un método
+    private static final QuickSort<Integer> highPivotQuickSort =  SortingAlgorithms::highPivotQuickSort;
 
-    private static final QuickSort<Integer> lowPivotQuickSort = null; // Reemplácelo por una referencia a un método
+    private static final QuickSort<Integer> lowPivotQuickSort = SortingAlgorithms::lowPivotQuickSort;
 
-    private static final QuickSort<Integer> randomPivotQuickSort = null; // Reemplácelo por una referencia a un método
+    private static final QuickSort<Integer> randomPivotQuickSort = SortingAlgorithms::randomPivotQuickSort;
 
     public static QuickSort<Integer> getHighPivotQuickSort() {
         return highPivotQuickSort;
@@ -89,3 +89,8 @@ public class Main {
         System.out.println("================================");
     }
 }
+
+/*
+highPivot y lowPivot con arreglos ordenados/invertidos son O(n²).
+Por eso se redujo ARRAY_SIZE y TEST_SIZE en SortingTester, randomPivot es más rápido y estable en todos los casos
+*/

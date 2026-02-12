@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SortingTester<T extends Comparable<T>> {
-    private static final int ARRAY_SIZE = 10000;
-    private static final int TEST_SIZE = 1000;
+    private static final int ARRAY_SIZE = 1000;
+    private static final int TEST_SIZE = 100;
 
     public void testSorting(ArrayGenerator<T> generator, QuickSort<T> quickSort) {
         T[] array = generator.generate(ARRAY_SIZE);
@@ -43,3 +43,8 @@ public class SortingTester<T extends Comparable<T>> {
         System.out.printf("\t\tSuma de todos los tiempos: %s ms\n", sumaTotal);
     }
 }
+/*
+ARRAY_SIZE y TEST_SIZE bajados a 1000 y 100 respectivamente porque con highPivotQuickSort y lowPivotQuickSort en arreglos
+ordenados/invertidos pues la complejidad de tiempo  es O(n²) y se queda trabada la PC.
+Con valores más pequeños el programa corre rápido y estable
+*/
